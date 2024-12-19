@@ -208,6 +208,7 @@ class LibraryManagerTest {
 
     assertTrue(isReturnBook, "Ожидаем true, для пользователя взявшего другую книгу");
     assertEquals(1, libraryManager.getAvailableCopies(bookId));
+    verify(notificationService).notifyUser(userId, "You have returned the book: " + bookId);
   }
 
   // getAvailableCopies
